@@ -2,10 +2,10 @@
 # see more about dockerfile templates here: http://docs.resin.io/deployment/docker-templates/
 # and about resin base images here: http://docs.resin.io/runtime/resin-base-images/
 # Note the node:slim image doesn't have node-gyp
-# FROM resin/%%RESIN_MACHINE_NAME%%-node:slim
+FROM resin/%%RESIN_MACHINE_NAME%%-node:slim
 # FROM node:6.9
 # FROM resin/raspberrypi3-node:6.9
-FROM resin/raspberrypi-node:slim
+# FROM resin/raspberrypi-node:slim
 # FROM partlab/ubuntu-arm-nodejs
 # FROM hypriot/rpi-node:slim
 
