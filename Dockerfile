@@ -3,7 +3,7 @@
 # and about resin base images here: http://docs.resin.io/runtime/resin-base-images/
 # Note the node:slim image doesn't have node-gyp
 # FROM resin/%%RESIN_MACHINE_NAME%%-node:slim
-FROM estebanrfp/iotos:latest
+FROM estebanrfp/iotos
 
 
 
