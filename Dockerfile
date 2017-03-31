@@ -3,7 +3,8 @@
 # and about resin base images here: http://docs.resin.io/runtime/resin-base-images/
 # Note the node:slim image doesn't have node-gyp
 # FROM resin/%%RESIN_MACHINE_NAME%%-node:slim
-FROM node:6.9
+# FROM node:6.9
+FROM resin/raspberrypi3-node:6.9
 
 # use apt-get if you need to install dependencies,
 # for instance if you need ALSA sound utils, just uncomment the lines below.
