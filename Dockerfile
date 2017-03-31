@@ -1,5 +1,9 @@
 FROM resin/armv7hf-debian
 
-COPY qemu-arm /usr/bin/qemu-arm
+RUN [ "cross-build-start" ]
 
-RUN [ "/usr/bin/qemu-arm", "/bin/echo", "Hello from ARM container" ]  
+RUN apt-get update  
+RUN apt-get install python  
+RUN pip install virtualenv
+
+RUN [ "cross-build-end" ]  
