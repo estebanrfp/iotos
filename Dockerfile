@@ -5,7 +5,8 @@
 # FROM resin/%%RESIN_MACHINE_NAME%%-node:slim
 # FROM node:6.9
 # FROM resin/raspberrypi3-node:6.9
-FROM resin/raspberrypi-node:slim
+# FROM resin/raspberrypi-node:slim
+FROM partlab/ubuntu-arm-nodejs
 
 # use apt-get if you need to install dependencies,
 # for instance if you need ALSA sound utils, just uncomment the lines below.
