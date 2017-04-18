@@ -1,4 +1,4 @@
-FROM resin/armv7hf-debian
+FROM hypriot/rpi-iojs:1.4.1
 
 RUN [ "cross-build-start" ]
 
