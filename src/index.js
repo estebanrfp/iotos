@@ -1,13 +1,24 @@
-var express = require('express');
+var firebase = require('firebase')
 
-// Constants
-var PORT = 80;
+var config = {
+    apiKey: process.env.APIKEY,
+    authDomain: process.env.AUTHDOMAIN,
+    databaseURL: process.env.DATABASEURL
+};
 
-// App
-var app = express();
-app.get('/', function (req, res) {
-- res.sendFile('/src/index.html');
-});
+firebase.initializeApp(config);
 
-app.listen(PORT);
-console.log('Running on http://localhost:' + PORT);
+var ref = firebase.database().ref().child("room1")
+
+var Gpio = require('onoff').Gpio;
+var led = new Gpio(17, 'out');
+
+ref.on('value', function (data) {
+    if (data.val().Light == "1") {
+        console.log('on')
+        led.writeSync(1);
+    } else {
+        console.log('off')
+        led.writeSync(0);
+    }
+})

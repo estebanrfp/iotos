@@ -1,5 +1,5 @@
-FROM hypriot/rpi-iojs:1.4.1
-MAINTAINER Mathias Renner <mathias@hypriot.com>
+FROM hypriot/rpi-nodejs
+MAINTAINER Esteban Fuster Pozzi <estebanrfp@gmail.com>
 
 # Adding source files into container
 ADD src/ /src
@@ -9,9 +9,6 @@ WORKDIR /src
 
 # Install app dependencies
 RUN npm install
-
-# Open Port 80
-EXPOSE 80
 
 # Run Node.js
 CMD ["node", "index.js"]
