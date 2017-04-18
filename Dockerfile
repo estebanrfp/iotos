@@ -1,9 +1,17 @@
 FROM hypriot/rpi-iojs:1.4.1
+MAINTAINER Mathias Renner <mathias@hypriot.com>
 
-RUN [ "cross-build-start" ]
+# Adding source files into container
+ADD src/ /src
 
-RUN apt-get update  
-RUN apt-get install python  
-RUN pip install virtualenv
+# Define working directory
+WORKDIR /src
 
-RUN [ "cross-build-end" ]  
+# Install app dependencies
+RUN npm install
+
+# Open Port 80
+EXPOSE 80
+
+# Run Node.js
+CMD ["node", "index.js"]
