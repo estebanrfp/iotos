@@ -1,4 +1,4 @@
-FROM hypriot/rpi-nodejs
+FROM hypriot/rpi-node:latest
 MAINTAINER Esteban Fuster Pozzi <estebanrfp@gmail.com>
 
 # Adding source files into container
