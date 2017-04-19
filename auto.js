@@ -12,13 +12,17 @@ var ref = firebase.database().ref().child("servers")
 
 // cprocess.exec('npm run app');
 
+
+// ref.child(config.device)
 ref.on('value', function (data) {
-	if (data.val().rpi1 == "pull") {
-		deploy();
-	} else {
-		console.log('normal')
-	}
+	console.log(data)
 })
+
+// ref.on('value', function (data) {
+// 	if (data.val().rpi1 == "pull") {
+// 		deploy();
+// 	} 
+// })
 
 function deploy () {
   console.log('Starting Deploying aplication :-)');

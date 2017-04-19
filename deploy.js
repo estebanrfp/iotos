@@ -5,4 +5,4 @@ firebase.initializeApp(config);
 
 var ref = firebase.database().ref().child("servers");
 
-ref.child(config.device).set("pull");
+ref.child(config.device).set(new Date().getTime());
