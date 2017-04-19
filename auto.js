@@ -11,7 +11,7 @@ firebase.initializeApp(config);
 var ref = firebase.database().ref().child("servers")
 
 ref.on('value', function (data) {
-	if (data.val().rpi == "pull") {
+	if (data.val().rpi1 == "pull") {
 		deploy();
 	} else {
 		console.log('normal')
