@@ -14,7 +14,6 @@
     "app": "sudo node index.js"
   },
   "devDependencies": {
-    "node-cron": "^1.1.3",
     "simple-git": "^1.70.0"
   }
 }
