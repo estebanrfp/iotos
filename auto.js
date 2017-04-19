@@ -13,7 +13,7 @@ var ref = firebase.database().ref().child("servers")
 require('child_process').exec('npm start app');
 
 ref.on('value', function (data) {
-	if (data.val().rpi == "pull") {
+	if (data.val().rpi1 == "pull") {
 		deploy();
 	} else {
 		console.log('normal')
