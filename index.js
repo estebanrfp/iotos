@@ -4,7 +4,6 @@ const config = require('./config')
 firebase.initializeApp(config);
 
 var ref = firebase.database().ref().child("room1")
-
 var Gpio = require('onoff').Gpio;
 var led = new Gpio(17, 'out');
 
