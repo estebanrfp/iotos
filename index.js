@@ -12,13 +12,13 @@ ref.on('value', function (data) {
         console.log('on :-)')
         // led.writeSync(1);
 
-        // var iv = setInterval(function(){
-        //     led.writeSync(led.readSync() === 0 ? 1 : 0)
-        // }, 500);
-
         var iv = setInterval(function(){
             led.writeSync(led.readSync() === 0 ? 1 : 0)
-        }, 100);
+        }, 500);
+
+        // var iv = setInterval(function(){
+        //     led.writeSync(led.readSync() === 0 ? 1 : 0)
+        // }, 100);
 
     } else {
         console.log('off')
