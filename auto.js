@@ -14,13 +14,13 @@ var ref = firebase.database().ref().child("servers")
 
 // ref.child(config.device)
 
-ref.on('value', function (data) {
-	console.log(data.key)
-	if (data.val()[0] == config.device) {
-		deploy();
-	} else {
-		console.log('no es el dispositivo');
-	}
+ref.child(config.device).on('value', function (data) {
+	console.log(data)
+	// if (data.val()[0] == config.device) {
+	// 	deploy();
+	// } else {
+	// 	console.log('no es el dispositivo');
+	// }
 })
 
 function deploy () {
