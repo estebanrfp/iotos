@@ -15,7 +15,7 @@ var ref = firebase.database().ref().child("servers")
 // ref.child(config.device)
 
 ref.child(config.device).on('value', function (data) {
-	console.log(data)
+	console.log(data.val())
 	// if (data.val()[0] == config.device) {
 	// 	deploy();
 	// } else {
