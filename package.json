@@ -7,11 +7,15 @@
   "dependencies": {
     "child_process": "^1.0.2",
     "firebase": "^3.7.0",
+    "forever": "^0.15.3",
     "onoff": "^1.1.2"
   },
   "scripts": {
-    "start": "node auto.js",
-    "app": "sudo node index.js"
+
+    "start": "forever -w ./auto.js",
+    "start2": "node auto.js",
+    "app": "sudo forever -w ./index.js",
+    "app2": "sudo node index.js"
   },
   "devDependencies": {
     "simple-git": "^1.70.0"

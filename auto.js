@@ -10,7 +10,7 @@ firebase.initializeApp(config);
 
 var ref = firebase.database().ref().child("servers")
 
-cprocess.exec('npm run app');
+// cprocess.exec('npm run app');
 
 ref.on('value', function (data) {
 	if (data.val().rpi1 == "pull") {
@@ -30,7 +30,7 @@ function deploy () {
 	.pull(function(err, update) {
 		if(update && update.summary.changes) {
 			console.log('processing and restarting app...');
-			cprocess.exec('npm restart app');
+			// cprocess.exec('npm stop app');
 		}
 	})
 	.then(function() {
