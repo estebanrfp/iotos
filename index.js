@@ -1,10 +1,5 @@
-var firebase = require('firebase')
-
-var config = {
-    apiKey: process.env.APIKEY,
-    authDomain: process.env.AUTHDOMAIN,
-    databaseURL: process.env.DATABASEURL
-};
+const firebase = require('firebase')
+const config = require('./config')
 
 firebase.initializeApp(config);
 
