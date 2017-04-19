@@ -2,7 +2,7 @@
 const git = require('simple-git');
 const firebase = require('firebase')
 const config = require('./config')
-
+const cprocess = require('child_process')
 // const path = __dirname + '/iotos';
 // git(path).then etc..
 
@@ -10,7 +10,7 @@ firebase.initializeApp(config);
 
 var ref = firebase.database().ref().child("servers")
 
-require('child_process').exec('npm run app');
+cprocess.exec('npm run app');
 
 ref.on('value', function (data) {
 	if (data.val().rpi1 == "pull") {
@@ -30,9 +30,9 @@ function deploy () {
 	.pull(function(err, update) {
 		if(update && update.summary.changes) {
 			console.log('processing and restarting app...');
-			require('child_process').exec('npm restart app');
+			cprocess.exec('npm restart app');
 		}
-		})
+	})
 	.then(function() {
 	console.log('pull done.');
 	});
