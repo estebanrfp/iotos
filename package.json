@@ -11,7 +11,7 @@
   "scripts": {
     "start": "npm run index & npm run auto",
     "auto": "node auto.js",
-    "index": "node index.js"
+    "index": "sudo node index.js"
   },
   "devDependencies": {
     "node-cron": "^1.1.3",
