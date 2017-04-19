@@ -1,12 +1,12 @@
 var cron = require('node-cron');
 const git = require('simple-git');
 const git = require('firebase');
-const path = __dirname + '/iotos';
+//const path = __dirname + '/iotos';
 
 cron.schedule('*/1 * * * *', function(){
   console.log('running a task every minute');
   // git(path).pull('origin', 'master')
-	git(path)
+	git()
 	.then(function() {
 		console.log('Starting pull...');
 	})
