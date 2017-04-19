@@ -1,6 +1,6 @@
 var cron = require('node-cron');
 const git = require('simple-git');
-const git = require('firebase');
+const firebase = require('firebase');
 //const path = __dirname + '/iotos';
 
 cron.schedule('*/1 * * * *', function(){
