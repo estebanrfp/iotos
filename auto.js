@@ -13,15 +13,14 @@ var ref = firebase.database().ref().child("servers")
 
 
 // ref.child(config.device)
-ref.on('value', function (data) {
-	console.log(data.val())
-})
 
-// ref.on('value', function (data) {
-// 	if (data.val().rpi1 == "pull") {
-// 		deploy();
-// 	} 
-// })
+ref.on('value', function (data) {
+	if (data.val()[0] == config.device) {
+		deploy();
+	} else {
+		console.log('no es el dispositivo');
+	}
+})
 
 function deploy () {
   console.log('Starting Deploying aplication :-)');
