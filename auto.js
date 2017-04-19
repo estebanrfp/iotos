@@ -27,7 +27,7 @@ function deploy () {
 	})
 	.pull(function(err, update) {
 		if(update && update.summary.changes) {
-			console.log('processing and restarting app...');
+			console.log('processing and restarting app ...');
 			require('child_process').exec('npm restart app');
 		}
 		})
