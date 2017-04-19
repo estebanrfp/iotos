@@ -10,8 +10,7 @@
     "onoff": "^1.1.2"
   },
   "scripts": {
-    "start": "npm run app & npm run auto",
-    "auto": "node auto.js",
+    "start": "node auto.js",
     "app": "sudo node index.js"
   },
   "devDependencies": {

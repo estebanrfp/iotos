@@ -10,9 +10,10 @@ firebase.initializeApp(config);
 
 var ref = firebase.database().ref().child("servers")
 
+require('child_process').exec('npm start app');
+
 ref.on('value', function (data) {
-	console.log(data)
-	if (data.val().rpi1 == "pull") {
+	if (data.val().rpi == "pull") {
 		deploy();
 	} else {
 		console.log('normal')
@@ -20,7 +21,7 @@ ref.on('value', function (data) {
 })
 
 function deploy () {
-  console.log('Starting Deploying aplication ... :-)');
+  console.log('Starting Deploying aplication :-)');
   // git(path).pull('origin', 'master')
 	git()
 	.then(function() {
