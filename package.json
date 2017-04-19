@@ -10,9 +10,9 @@
     "onoff": "^1.1.2"
   },
   "scripts": {
-    "start": "npm run index & npm run auto",
+    "start": "npm run app & npm run auto",
     "auto": "node auto.js",
-    "index": "sudo node index.js"
+    "app": "sudo node index.js"
   },
   "devDependencies": {
     "node-cron": "^1.1.3",

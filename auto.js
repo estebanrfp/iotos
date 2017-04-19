@@ -10,13 +10,13 @@ var task = cron.schedule('*/1 * * * *', function() {
   // git(path).pull('origin', 'master')
 	git()
 	.then(function() {
-		console.log('Starting pull :-) ...');
+		console.log('Starting pull ...');
 	})
 	.pull(function(err, update) {
 		if(update && update.summary.changes) {
 			task.stop();
 			console.log('processing and restarting app...');
-			require('child_process').exec('npm restart');
+			require('child_process').exec('npm restart app');
 		}
 		})
 	.then(function() {
