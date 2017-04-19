@@ -4,6 +4,7 @@ const git = require('simple-git');
 // const path = __dirname + '/iotos';
 // git(path).then etc..
 
+
 var task = cron.schedule('*/1 * * * *', function() {
   console.log('running a task every minute');
   // git(path).pull('origin', 'master')
