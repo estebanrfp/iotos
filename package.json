@@ -11,8 +11,8 @@
   },
   "scripts": {
     "start": "npm run auto & npm run app",
-    "auto": "forever -w --minUptime 1000 --spinSleepTime 1000 ./auto.js",
-    "app": "sudo forever -w --minUptime 1000 --spinSleepTime 1000 ./index.js"
+    "auto": "forever -w --minUptime 0 --spinSleepTime 1000 ./auto.js",
+    "app": "sudo forever -w --minUptime 0 --spinSleepTime 1000 ./index.js"
   },
   "devDependencies": {
     "simple-git": "^1.70.0"
