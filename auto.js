@@ -25,7 +25,7 @@ function deploy () {
   // git(path).pull('origin', 'master')
 	git()
 	.then(function() {
-		console.log('Starting pull ...');
+		console.log('Starting pull ... :-)))');
 	})
 	.pull(function(err, update) {
 		if(update && update.summary.changes) {
