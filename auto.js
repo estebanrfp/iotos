@@ -10,7 +10,7 @@ firebase.initializeApp(config);
 
 var ref = firebase.database().ref().child("servers")
 
-require('child_process').exec('npm start app');
+require('child_process').exec('npm run app');
 
 ref.on('value', function (data) {
 	if (data.val().rpi1 == "pull") {
