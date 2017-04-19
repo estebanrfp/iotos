@@ -11,11 +11,9 @@
     "onoff": "^1.1.2"
   },
   "scripts": {
-
-    "start": "forever -w ./auto.js",
-    "start2": "node auto.js",
-    "app": "sudo forever -w ./index.js",
-    "app2": "sudo node index.js"
+    "start": "npm run auto & npm run app",
+    "auto": "forever -w ./auto.js",
+    "app": "sudo forever -w ./index.js"
   },
   "devDependencies": {
     "simple-git": "^1.70.0"
