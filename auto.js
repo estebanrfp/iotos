@@ -3,7 +3,8 @@ const git = require('simple-git');
 // const firebase = require('firebase');
 // const path = __dirname + '/iotos';
 // git(path).then etc..
-cron.schedule('*/1 * * * *', function(){
+
+var task = cron.schedule('*/1 * * * *', function() {
   console.log('running a task every minute');
   // git(path).pull('origin', 'master')
 	git()
@@ -12,6 +13,7 @@ cron.schedule('*/1 * * * *', function(){
 	})
 	.pull(function(err, update) {
 		if(update && update.summary.changes) {
+			task.stop();
 			console.log('processing and restarting app...');
 			require('child_process').exec('npm restart');
 		}
