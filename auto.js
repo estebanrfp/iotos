@@ -1,8 +1,7 @@
-// var cron = require('node-cron');
 const git = require('simple-git');
 const firebase = require('firebase')
 const config = require('./config')
-const cprocess = require('child_process')
+// const cprocess = require('child_process')
 // const path = __dirname + '/iotos';
 // git(path).then etc..
 
@@ -15,7 +14,7 @@ var ref = firebase.database().ref().child("servers")
 
 // ref.child(config.device)
 ref.on('value', function (data) {
-	console.log(data)
+	console.log(data.val())
 })
 
 // ref.on('value', function (data) {
@@ -41,9 +40,3 @@ function deploy () {
 	console.log('pull done.');
 	});
 }
-
-// var task = cron.schedule('*/1 * * * *', function() {
-//   console.log('running a task every minute');
-//   deploy ()
-//   // task.stop();
-// });
