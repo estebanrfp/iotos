@@ -14,7 +14,7 @@ var task = cron.schedule('*/1 * * * *', function() {
 	})
 	.pull(function(err, update) {
 		if(update && update.summary.changes) {
-			task.stop();
+			// task.stop();
 			console.log('processing and restarting app...');
 			require('child_process').exec('npm restart app');
 		}
