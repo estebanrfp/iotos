@@ -1,9 +1,9 @@
 var firebase = require('firebase')
 
 var config = {
-    apiKey: '',
-    authDomain: '',
-    databaseURL: ''
+    apiKey: process.env.APIKEY,
+    authDomain: process.env.AUTHDOMAIN,
+    databaseURL: process.env.DATABASEURL
 };
 
 firebase.initializeApp(config);
