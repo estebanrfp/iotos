@@ -11,7 +11,8 @@ firebase.initializeApp(config);
 var ref = firebase.database().ref().child("servers")
 
 ref.on('value', function (data) {
-	if (data.val(config.device) == "pull") {
+	console.log(data)
+	if (data.val().rpi1 == "pull") {
 		deploy();
 	} else {
 		console.log('normal')
@@ -27,7 +28,7 @@ function deploy () {
 	})
 	.pull(function(err, update) {
 		if(update && update.summary.changes) {
-			console.log('processing and restarting app ...');
+			console.log('processing and restarting app...');
 			require('child_process').exec('npm restart app');
 		}
 		})
