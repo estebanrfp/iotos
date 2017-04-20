@@ -10,16 +10,18 @@ firebase.initializeApp(config);
 var ref = firebase.database().ref().child("servers")
 
 ref.child(config.device).on('value', deploy)
+
 // ref.child(config.device).on('value', function (data) {
 // 	//console.log(data.val())
 // 	deploy();
 // })
+
 function deploy () {
-  console.log('Starting Deploying aplication ::-)');
+  console.log('Starting Deploying aplication -)');
 
 	git()
 	.then(function() {
-		console.log('Starting pull ... :-(´´)');
+		console.log('Starting pull ... :-');
 	})
 	.pull(function(err, update) {
 		if(update && update.summary.changes) {
