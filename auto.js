@@ -17,18 +17,17 @@ ref.child(config.device).on('value', deploy)
 // })
 
 function deploy () {
-  console.log('Starting Deploying aplication ... !!');
-
+  console.log('Starting Deploying aplication ...');
 	git()
 	.then(function() {
-		console.log('Starting pull ... !!');
+		console.log('Starting pull ... ');
 	})
 	.pull(function(err, update) {
 		if(update && update.summary.changes) {
-			console.log('processing and restarting app... !!');
+			console.log('processing and restarting app ...');
 		}
 	})
 	.then(function() {
-		console.log('pull done. !!');
+		console.log('pull done.');
 	});
 }
