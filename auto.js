@@ -17,11 +17,11 @@ ref.child(config.device).on('value', deploy)
 // })
 
 function deploy () {
-  console.log('Starting Deploying aplication -)');
+  console.log('Starting Deploying aplication ...');
 
 	git()
 	.then(function() {
-		console.log('Starting pull ... :-');
+		console.log('Starting pull ...');
 	})
 	.pull(function(err, update) {
 		if(update && update.summary.changes) {
