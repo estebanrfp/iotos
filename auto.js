@@ -16,7 +16,7 @@ ref.child(config.device).on('value', deploy)
 // 	deploy();
 // })
 
-function deploy () {
+function deploy (data) {
   console.log('Starting Deploying aplication ...');
 	git()
 	.then(function() {
@@ -28,6 +28,6 @@ function deploy () {
 		}
 	})
 	.then(function() {
-		console.log('pull done.');
+		console.log('pull done. :-)');
 	});
 }
