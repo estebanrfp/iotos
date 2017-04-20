@@ -10,10 +10,10 @@ var led = new Gpio(17, 'out');
 ref.on('value', function (data) {
     if (data.val().Light == "1") {
         console.log('on')
-        led.writeSync(1);
-        // var iv = setInterval(function(){
-        //     led.writeSync(led.readSync() === 0 ? 1 : 0)
-        // }, 500);
+        // led.writeSync(1);
+        var iv = setInterval(function(){
+            led.writeSync(led.readSync() === 0 ? 1 : 0)
+        }, 500);
         // var iv = setInterval(function(){
         //     led.writeSync(led.readSync() === 0 ? 1 : 0)
         // }, 100);
