@@ -19,16 +19,16 @@ function deploy (data) {
 	console.log('checking... ');
 	// console.log(data.val())
 	require('child_process').exec('docker build -t estebanrfp/iotos:latest https://github.com/estebanrfp/iotos.git');
-// 	git()
-// 	.then(function() {
-// 		console.log('Starting pull ... ');
-// 	})
-// 	.pull(function(err, update) {
-// 		if(update && update.summary.changes) {
-// 			console.log('processing and restarting app ...');
-// 		}
-// 	})
-// 	.then(function() {
-// 		console.log('pull done.');
-// 	});
-// }
+	// git()
+	// .then(function() {
+	// 	console.log('Starting pull ... ');
+	// })
+	// .pull(function(err, update) {
+	// 	if(update && update.summary.changes) {
+	// 		console.log('processing and restarting app ...');
+	// 	}
+	// })
+	// .then(function() {
+	// 	console.log('pull done.');
+	// });
+}
