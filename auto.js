@@ -8,6 +8,13 @@ var ref = firebase.database().ref().child("servers")
 
 ref.child(config.device).on('value', deploy)
 
+process.on('SIGINT', function() {
+	console.log('pausa antes de reiniciar ...')
+	setTimeout(function(){
+		process.exit(err ? 1 : 0);
+	}, 2000);
+});
+
 function deploy (data) {
 	// console.log(data.val())
   	// require('child_process').exec(`docker build -t estebanrfp/iotos:latest https://github.com/estebanrfp/iotos.git`)
