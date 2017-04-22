@@ -9,7 +9,7 @@ var ref = firebase.database().ref().child("servers")
 ref.child(config.device).on('value', deploy)
 
 process.on('SIGINT', function() {
-	console.log('pausa antes de reiniciar ...')
+	console.log('restarting in 2 seg ...')
 	setTimeout(function(){
 		process.exit(err ? 1 : 0);
 	}, 100);
