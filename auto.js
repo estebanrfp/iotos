@@ -11,7 +11,7 @@ ref.child(config.device).on('value', deploy)
 process.on('SIGINT', function() {
 	console.log('restarting in 2 seg ...')
 	setTimeout(function(){
-		process.exit(err ? 1 : 0);
+		process.exit();
 	}, 100);
 });
 
