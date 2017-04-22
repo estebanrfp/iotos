@@ -2,9 +2,6 @@ const git = require('simple-git');
 const firebase = require('firebase')
 const config = require('./config')
 
-// const path = __dirname + '/iotos';
-// git(path).then etc..
-
 firebase.initializeApp(config);
 
 var ref = firebase.database().ref().child("servers")
