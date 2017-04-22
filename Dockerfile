@@ -35,4 +35,5 @@ RUN npm i -g pm2
 # ADD . /data
 RUN git clone https://github.com/estebanrfp/iotos.git /data/
 
-CMD ["pm2", "start", "processes.json", "--no-daemon"]
+# CMD ["pm2", "start", "processes.json", "--no-daemon"]
+CMD ["pm2-docker", "process.yml"]

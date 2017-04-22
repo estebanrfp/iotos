@@ -1,0 +1,7 @@
+apps:
+  - script   : './auto.js'
+    name     : 'auto'
+    exec_mode: 'cluster'
+  - script   : './index.js'
+    name     : 'index'
+    exec_mode: 'cluster'
