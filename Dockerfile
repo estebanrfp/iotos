@@ -21,10 +21,6 @@ RUN apt-get update && apt-get install -y \
 RUN wget http://node-arm.herokuapp.com/node_latest_armhf.deb
 RUN sudo dpkg -i node_latest_armhf.deb
 
-# Set the work directory
-#RUN mkdir -p /var/www/app/current
-#WORKDIR ${appDir}
-
 # Define working directory
 WORKDIR /data
 
