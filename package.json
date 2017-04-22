@@ -6,7 +6,6 @@
   "author": "estebanrfp",
   "dependencies": {
     "firebase": "^3.7.0",
-    "forever": "^0.15.3",
     "onoff": "^1.1.2"
   },
   "scripts": {
