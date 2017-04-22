@@ -27,7 +27,6 @@ RUN sudo dpkg -i node_latest_armhf.deb
 
 # Define working directory
 WORKDIR /data
-VOLUME /data
 
 # Add our package.json and install *before* adding our application files
 ADD package.json ./
