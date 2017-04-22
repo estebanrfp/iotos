@@ -18,16 +18,18 @@ ref.child(config.device).on('value', deploy)
 
 function deploy (data) {
   console.log('Starting Deploying aplication ...');
-	git()
-	.then(function() {
-		console.log('Starting pull ... ');
-	})
-	.pull(function(err, update) {
-		if(update && update.summary.changes) {
-			console.log('processing and restarting app ...');
-		}
-	})
-	.then(function() {
-		console.log('pull done. :-)');
-	});
+  	require('child_process').exec(`docker build -t estebanrfp/iotos:latest https://github.com/estebanrfp/iotos.git`)
+	require('child_process').exec(`docker run --privileged -e DEVICE='${DEVICE}' -e APIKEY='${APIKEY}' -e AUTHDOMAIN='${AUTHDOMAIN}' -e DATABASEURL='${DATABASEURL}' estebanrfp/iotos`);
+	// git()
+	// .then(function() {
+	// 	console.log('Starting pull ... ');
+	// })
+	// .pull(function(err, update) {
+	// 	if(update && update.summary.changes) {
+	// 		console.log('processing and restarting app ...');
+	// 	}
+	// })
+	// .then(function() {
+	// 	console.log('pull done. :-)');
+	// });
 }
