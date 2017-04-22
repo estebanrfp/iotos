@@ -17,6 +17,7 @@ process.on('SIGINT', function() {
 
 function deploy (data) {
 	console.log('checking... ');
+	
 	// console.log(data.val())
 	require('child_process').exec('docker build -t estebanrfp/iotos:latest https://github.com/estebanrfp/iotos.git');
 	// git()
