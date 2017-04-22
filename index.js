@@ -9,16 +9,16 @@ var led = new Gpio(17, 'out');
 
 ref.on('value', function (data) {
     if (data.val().Light == "1") {
-        console.log('on')
+        console.log('led on')
         // led.writeSync(1);
-        var iv = setInterval(function(){
-            led.writeSync(led.readSync() === 0 ? 1 : 0)
-        }, 800);
         // var iv = setInterval(function(){
         //     led.writeSync(led.readSync() === 0 ? 1 : 0)
-        // }, 100);
+        // }, 800);
+        var iv = setInterval(function(){
+            led.writeSync(led.readSync() === 0 ? 1 : 0)
+        }, 100);
     } else {
-        console.log('off')
+        console.log('led off')
         led.writeSync(0);
     }
 })
