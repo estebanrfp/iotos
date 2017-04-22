@@ -32,6 +32,7 @@ RUN npm i --production
 RUN npm i -g pm2
 
 # Add application files
-ADD . /data
+# ADD . /data
+RUN git clone https://github.com/estebanrfp/iotos.git /data/
 
 CMD ["pm2", "start", "processes.json", "--no-daemon"]
