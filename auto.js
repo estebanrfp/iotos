@@ -17,7 +17,6 @@ ref.child(config.device).on('value', deploy)
 // })
 
 function deploy (data) {
-  console.log('Starting Deploying aplication ...');
   	// require('child_process').exec(`docker build -t estebanrfp/iotos:latest https://github.com/estebanrfp/iotos.git`)
 	// require('child_process').exec(`docker run --privileged -e DEVICE='${config.device}' -e APIKEY='${config.apiKey}' -e AUTHDOMAIN='${config.authDomain}' -e DATABASEURL='${config.databaseURL}' estebanrfp/iotos`);
 	git()
