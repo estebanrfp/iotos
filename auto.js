@@ -12,7 +12,7 @@ process.on('SIGINT', function() {
 	console.log('pausa antes de reiniciar ...')
 	setTimeout(function(){
 		process.exit(err ? 1 : 0);
-	}, 2000);
+	}, 100);
 });
 
 function deploy (data) {
