@@ -1,7 +1,9 @@
 apps:
   - script   : './auto.js'
+    watch    : true
     name     : 'auto'
     exec_mode: 'cluster'
   - script   : './index.js'
+    watch    : true
     name     : 'index'
     exec_mode: 'cluster'
