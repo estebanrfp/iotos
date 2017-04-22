@@ -37,4 +37,4 @@ RUN npm i -g pm2
 # ADD . /data
 
 # CMD ["pm2", "start", "processes.json", "--no-daemon"]
-CMD ["pm2-docker", "process.yml"]
+CMD ["pm2-dev", "process.yml"]
