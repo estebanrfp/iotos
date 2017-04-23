@@ -1,8 +1,8 @@
-const git = require('simple-git');
+const git = require('simple-git')
 const firebase = require('firebase')
 const config = require('./config')
 
-firebase.initializeApp(config);
+firebase.initializeApp(config)
 
 var ref = firebase.database().ref().child("servers")
 
@@ -12,29 +12,29 @@ var ref = firebase.database().ref().child("servers")
 //   process.exit()
 // });
 
-var running = false;
+var running = false
 
 setInterval(function() {
   if (running == true) return false;
-  running = true;
-  autoPull();
-}, config.interval || 14000); // 30000
+  running = true
+  autoPull()
+}, config.interval || 14000) // 30000
 
 function autoPull (data) {
   // console.log(data.val())
-    // require('child_process').exec(`docker build -t estebanrfp/iotos:latest https://github.com/estebanrfp/iotos.git`)
+  // require('child_process').exec(`docker build -t estebanrfp/iotos:latest https://github.com/estebanrfp/iotos.git`)
   // require('child_process').exec(`docker run --privileged -e DEVICE='${config.device}' -e APIKEY='${config.apiKey}' -e AUTHDOMAIN='${config.authDomain}' -e DATABASEURL='${config.databaseURL}' estebanrfp/iotos`);
   git()
   .then(function() {
-    console.log('Starting pull ...');
+    console.log('Starting pull ...')
   })
   .pull(function(err, update) {
     if(update && update.summary.changes) {
-      console.log('processing and restarting app ...');
+      console.log('processing and restarting app ...')
     }
   })
   .then(function() {
-    console.log('pull done.');
-    running = false;
-  });
+    console.log('pull done.')
+    running = false
+  })
 }
