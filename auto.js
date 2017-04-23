@@ -12,6 +12,7 @@ ref.child(config.device).on('value', deploy)
 //   process.exit()
 // });
 
+
 function deploy (data) {
   // console.log(data.val())
     // require('child_process').exec(`docker build -t estebanrfp/iotos:latest https://github.com/estebanrfp/iotos.git`)

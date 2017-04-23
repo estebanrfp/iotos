@@ -7,4 +7,6 @@ var ref = firebase.database().ref().child("servers");
 
 ref.child(config.device).set(new Date().getTime());
 
-process.exit()
+ref.once('value', function (snapshot) {
+    process.exit();
+});
