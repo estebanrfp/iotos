@@ -42,3 +42,4 @@ function pullRepo () {
     });
   }, config.interval || 30000);
 }
+pullRepo()
