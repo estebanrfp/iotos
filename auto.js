@@ -19,7 +19,7 @@ function deploy (data) {
   // require('child_process').exec(`docker run --privileged -e DEVICE='${config.device}' -e APIKEY='${config.apiKey}' -e AUTHDOMAIN='${config.authDomain}' -e DATABASEURL='${config.databaseURL}' estebanrfp/iotos`);
   git()
   .then(function() {
-    console.log('Starting pull ... ');
+    console.log('Starting pull ... :-)');
   })
   .pull(function(err, update) {
     if(update && update.summary.changes) {
