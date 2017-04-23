@@ -12,6 +12,14 @@ var ref = firebase.database().ref().child("servers")
 //   process.exit()
 // });
 
+var running = false;
+
+setInterval(function() {
+  if (running == true) return false;
+  running = true;
+  autoPull();
+}, config.interval || 300); // 30000
+
 function autoPull (data) {
   // console.log(data.val())
     // require('child_process').exec(`docker build -t estebanrfp/iotos:latest https://github.com/estebanrfp/iotos.git`)
@@ -27,19 +35,6 @@ function autoPull (data) {
   })
   .then(function() {
     console.log('pull done.');
+    running = false;
   });
 }
-
-function pullRepo () {
-  var running = false;
-
-  setInterval(function() {
-    if (running == true) return false;
-
-    running = true;
-    autoPull(function() {
-      running = false;
-    });
-  }, config.interval || 30000); // 300
-}
-pullRepo();
