@@ -10,10 +10,5 @@
     "onoff": "^1.1.2",
     "pm2-auto-pull": "^1.16.0",
     "simple-git": "^1.70.0"
-  },
-  "scripts": {
-    "start": "npm run auto & npm run app",
-    "auto": "forever -w --minUptime 120 --spinSleepTime 1000 ./auto.js",
-    "app": "sudo forever -w --minUptime 120 --spinSleepTime 1000 ./index.js"
   }
 }
