@@ -40,5 +40,6 @@ RUN pm2 set pm2-auto-pull:interval 60000
 # ADD . /data
 
 # CMD ["pm2", "start", "processes.json", "--no-daemon"]
-CMD ["pm2-dev", "process.yml", "--no-daemon"]
+# CMD ["pm2-dev", "process.yml", "--no-daemon"]
+CMD ["pm2-docker", "process.yml", "--no-daemon"]
 #CMD ["pm2-dev", "process.yml", "--only", "APP"]
