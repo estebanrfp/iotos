@@ -8,6 +8,7 @@
     "child_process": "^1.0.2",
     "firebase": "^3.7.0",
     "onoff": "^1.1.2",
+    "pm2-auto-pull": "^1.16.0",
     "simple-git": "^1.70.0"
   },
   "scripts": {
