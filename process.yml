@@ -1,9 +1,11 @@
 apps:
   - script   : './auto.js'
+    watch    : 'api'
     name     : 'auto'
     exec_mode: 'cluster'
     kill_timeout : 100
   - script   : './index.js'
+    watch    : 'api'
     name     : 'index'
     exec_mode: 'cluster'
     kill_timeout : 100
