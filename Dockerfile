@@ -32,8 +32,6 @@ RUN npm i --production
 
 # Install pm2 so we can run our application
 RUN npm i -g pm2
-#RUN pm2 install pm2-auto-pull
-#RUN pm2 set pm2-auto-pull:interval 60000
 
 # Add application files
 # ADD . /data
