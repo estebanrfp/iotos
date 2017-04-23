@@ -18,7 +18,7 @@ setInterval(function() {
   if (running == true) return false;
   running = true
   autoPull()
-}, config.interval || 14000) // 30000
+}, config.interval || 30000) // 30000
 
 function autoPull (data) {
   // console.log(data.val())
