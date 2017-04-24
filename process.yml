@@ -1,9 +1,9 @@
 apps:
-  - script   : './auto.js'
-    name     : 'auto'
-    exec_mode: 'cluster'
-    kill_timeout : 100
   - script   : './index.js'
     name     : 'index'
+    exec_mode: 'cluster'
+    kill_timeout : 100
+  - script   : './auto.js'
+    name     : 'auto'
     exec_mode: 'cluster'
     kill_timeout : 100
