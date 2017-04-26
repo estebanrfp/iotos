@@ -18,7 +18,7 @@ MAINTAINER Esteban Fuster Pozzi <estebanrfp@gmail.com>
 #     python-virtualenv \
 #     --no-install-recommends && \
 #     rm -rf /var/lib/apt/lists/*
-RUN apt-get install -y git-core
+# RUN apt-get install -y git-core
 # RUN apt-get update && apt-get install -y \
 #     git-core \
 #     build-essential \
