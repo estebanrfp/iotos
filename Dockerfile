@@ -9,6 +9,10 @@ MAINTAINER Esteban Fuster Pozzi <estebanrfp@gmail.com>
 RUN apt-get update && apt-get install -y \
     git-core \
     wget \
+    python \
+    python-dev \
+    python-pip \
+    python-virtualenv \
     --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
