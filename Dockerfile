@@ -1,5 +1,5 @@
 # Dockerfile
-FROM hypriot/rpi-alpine-node:latest
+FROM hypriot/rpi-alpine-node
 # FROM hypriot/rpi-node:latest
 MAINTAINER Esteban Fuster Pozzi <estebanrfp@gmail.com>
 
