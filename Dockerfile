@@ -6,7 +6,7 @@ MAINTAINER Esteban Fuster Pozzi <estebanrfp@gmail.com>
 # Set environment variables
 
 # ENV appDir /var/www/app/current
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
     git-core \
     wget \
     --no-install-recommends && \
