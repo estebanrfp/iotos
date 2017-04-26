@@ -1,20 +1,9 @@
 # Dockerfile
-FROM hypriot/rpi-node:slim
-# FROM hypriot/rpi-node:latest
+FROM hypriot/rpi-node:latest
 MAINTAINER Esteban Fuster Pozzi <estebanrfp@gmail.com>
 
 # Set environment variables
-
 # ENV appDir /var/www/app/current
-RUN apt-get update && apt-get install -y \
-    git-core \
-    wget \
-    python \
-    python-dev \
-    python-pip \
-    python-virtualenv \
-    --no-install-recommends && \
-    rm -rf /var/lib/apt/lists/*
 
 # Define working directory
 WORKDIR /data
