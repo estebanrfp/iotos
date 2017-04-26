@@ -1,5 +1,5 @@
 # Dockerfile
-FROM hypriot/rpi-node
+FROM hypriot/rpi-node:6.9-slim
 # FROM resin/rpi-raspbian:jessie
 MAINTAINER Esteban Fuster Pozzi <estebanrfp@gmail.com>
 
