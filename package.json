@@ -6,8 +6,7 @@
   "author": "estebanrfp",
   "scripts": {
     "start": "npm install && node auto.js && node index.js",
-    "start-prod": "node index.js",
-    "test": "echo no test specified"
+    "start-prod": "node index.js"
   },
   "dependencies": {
     "firebase": "^3.7.0",
