@@ -1,0 +1,7 @@
+app:
+  build: ./
+  command: npm run start-prod
+  restart: always
+  privileged: true
+  env_file:
+    - ./env.sh

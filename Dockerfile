@@ -1,26 +1,8 @@
 # Dockerfile
 FROM hypriot/rpi-node:latest
-MAINTAINER Esteban Fuster Pozzi <estebanrfp@gmail.com>
 
-# Set environment variables
-# ENV appDir /var/www/app/current
-
-# Define working directory
 WORKDIR /data
 
-RUN git clone https://github.com/estebanrfp/iotos.git /data/
-# Add our package.json and install *before* adding our application files
-# ADD package.json ./
+RUN git clone https://github.com/estebanrfp/iotos.git ./
 
-RUN npm i --production
-
-RUN npm i -g pm2
-
-# Add application files
-# ADD . /data
-
-# CMD ["pm2", "start", "processes.json", "--no-daemon"]
-CMD ["pm2-dev", "process.yml"]
-# CMD ["pm2-docker", "process.yml"]
-# CMD ["pm2-dev", "process.yml", "--only", "APP"]
-
+# RUN npm i --production
