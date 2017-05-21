@@ -6,7 +6,7 @@
   "author": "estebanrfp",
   "scripts": {
     "start": "npm install && node auto.js && node index.js",
-    "start-prod": "npm install --production && node auto.js && node index.js",
+    "start-prod": "node auto.js && node index.js",
     "test": "echo no test specified"
   },
   "dependencies": {
