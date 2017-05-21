@@ -6,7 +6,7 @@ firebase.initializeApp(config)
 
 var ref = firebase.database().ref().child("servers")
 
-// ref.child(config.device).on('value', autoPull)
+ref.child(config.device).on('value', autoPull)
 
 // process.on('SIGINT', function() {
 //   process.exit()
@@ -17,7 +17,7 @@ var running = false
 setInterval(function() {
   if (running == true) return false;
   running = true
-  autoPull()
+  // autoPull()
 }, config.interval || 30000) // 30000
 
 function autoPull (data) {
