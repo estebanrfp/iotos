@@ -1,6 +1,6 @@
 app:
   build: ./
-  command: npm run start-prod
+  command: npm run start-auto
   restart: always
   privileged: true
   env_file:

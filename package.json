@@ -5,8 +5,9 @@
   "description": "Node.js Hello world app on docker",
   "author": "estebanrfp",
   "scripts": {
-    "start": "node auto.js && node index.js",
-    "start-prod": "node index.js"
+    "start": "node index.js",
+    "rebuild": "npm install && node index.js",
+    "start-auto": "node auto.js"
   },
   "dependencies": {
     "child_process": "^1.0.2",

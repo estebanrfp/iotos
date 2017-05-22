@@ -14,13 +14,14 @@ ref.child(config.device).on('value', autoPull)
 
 var running = false
 
-setInterval(function() {
-  if (running == true) return false;
-  running = true
-  // autoPull()
-}, config.interval || 30000) // 30000
+// setInterval(function() {
+//   if (running == true) return false;
+//   running = true
+//   autoPull()
+// }, config.interval || 30000) // 30000
 
 function autoPull (data) {
+  require('child_process').exec(`npm run start`)
   // console.log(data.val())
   // require('child_process').exec(`docker build -t estebanrfp/iotos:latest https://github.com/estebanrfp/iotos.git`)
   // require('child_process').exec(`docker run --privileged -e DEVICE='${config.device}' -e APIKEY='${config.apiKey}' -e AUTHDOMAIN='${config.authDomain}' -e DATABASEURL='${config.databaseURL}' estebanrfp/iotos`);
@@ -32,6 +33,7 @@ function autoPull (data) {
     if(update && update.summary.changes) {
       console.log(update)
       console.log('processing and restarting app ...')
+      require('child_process').exec(`npm run rebuild`)
     }
   })
   .then(function() {
