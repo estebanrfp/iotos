@@ -30,7 +30,9 @@ function autoPull (data) {
   })
   .pull(function(err, update) {
     if(update && update.summary.changes) {
+      console.log(update)
       console.log('processing and restarting app ...')
+      require('child_process').exec(`npm restart index.js`)
     }
   })
   .then(function() {
