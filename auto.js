@@ -32,7 +32,6 @@ function autoPull (data) {
     if(update && update.summary.changes) {
       console.log(update)
       console.log('processing and restarting app ...')
-      require('child_process').exec(`npm restart index.js`)
     }
   })
   .then(function() {
