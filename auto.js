@@ -16,7 +16,7 @@ var child = new (forever.Forever)('index.js', {
   silent: true,
   args: []
 })
-child.on('exit', this.callback)
+// child.on('exit', this.callback)
 child.restart()
 
 var running = false
