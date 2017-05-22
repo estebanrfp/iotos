@@ -1,6 +1,5 @@
 app:
-  build:
-    context: https://github.com/estebanrfp/iotos.git 
+  build: ./
   command: node auto.js
   restart: always
   privileged: true
