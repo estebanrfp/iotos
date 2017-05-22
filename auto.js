@@ -1,16 +1,23 @@
+var forever = require('forever')
 const git = require('simple-git')
 const firebase = require('firebase')
 const config = require('./config')
 
 firebase.initializeApp(config)
-
 var ref = firebase.database().ref().child("servers")
-
 ref.child(config.device).on('value', autoPull)
 
 // process.on('SIGINT', function() {
 //   process.exit()
 // });
+
+var child = new (forever.Forever)('index.js', {
+  max: 3,
+  silent: true,
+  args: []
+})
+child.on('exit', this.callback)
+child.restart()
 
 var running = false
 
@@ -21,7 +28,7 @@ var running = false
 // }, config.interval || 30000) // 30000
 
 function autoPull (data) {
-  require('child_process').exec(`npm run start`)
+  // require('child_process').exec(`npm run start`)
   // console.log(data.val())
   // require('child_process').exec(`docker build -t estebanrfp/iotos:latest https://github.com/estebanrfp/iotos.git`)
   // require('child_process').exec(`docker run --privileged -e DEVICE='${config.device}' -e APIKEY='${config.apiKey}' -e AUTHDOMAIN='${config.authDomain}' -e DATABASEURL='${config.databaseURL}' estebanrfp/iotos`);
@@ -33,7 +40,8 @@ function autoPull (data) {
       if(update && update.summary.changes) {
         console.log(update)
         console.log('processing and restarting app ...')
-        require('child_process').exec(`npm run rebuild`)
+        child.restart()
+        // require('child_process').exec(`npm run rebuild`)
       }
     })
     .exec(function() {
