@@ -11,6 +11,7 @@ ref.on('value', function (data) {
     if (data.val().Light == "1") {
         console.log('led on :-)')
         led.writeSync(1);
+        
         // var iv = setInterval(function(){
         //     led.writeSync(led.readSync() === 0 ? 1 : 0)
         // }, 800)
