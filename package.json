@@ -10,9 +10,8 @@
     "start-auto": "node auto.js"
   },
   "dependencies": {
-    "child_process": "^1.0.2",
     "firebase": "^3.7.0",
-    "forever": "^0.15.3",
+    "forever-monitor": "^1.7.1",
     "onoff": "^1.1.2",
     "simple-git": "^1.73.0"
   }

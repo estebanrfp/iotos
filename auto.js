@@ -1,4 +1,4 @@
-var forever = require('forever')
+var forever = require('forever-monitor');
 const git = require('simple-git')
 const firebase = require('firebase')
 const config = require('./config')
@@ -11,13 +11,17 @@ ref.child(config.device).on('value', autoPull)
 //   process.exit()
 // });
 
-var child = new (forever.Forever)('index.js', {
+var child = new (forever.Monitor)('index.js', {
   max: 3,
   silent: true,
   args: []
-})
-// child.on('exit', this.callback)
-child.restart()
+});
+
+child.on('watch:restart', function(info) {
+    console.error('Restaring script because ' + info.file + ' changed');
+});
+
+child.start();
 
 var running = false
 
@@ -40,8 +44,6 @@ function autoPull (data) {
       if(update && update.summary.changes) {
         console.log(update)
         console.log('processing and restarting app ...')
-        child.restart()
-        // require('child_process').exec(`npm run rebuild`)
       }
     })
     .exec(function() {
