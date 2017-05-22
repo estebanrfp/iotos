@@ -13,6 +13,7 @@ ref.child(config.device).on('value', autoPull)
 
 var child = new (forever.Monitor)('index.js', {
   max: 3,
+  watch: true,
   silent: true,
   args: []
 });
