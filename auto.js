@@ -21,7 +21,11 @@ child.on('watch:restart', function(info) {
     console.error('Restaring script because ' + info.file + ' changed');
 });
 
-child.start();
+child.on('restart', function() {
+    console.error('Forever restarting script for ' + child.times + ' time');
+});
+
+child.start()
 
 var running = false
 
@@ -42,6 +46,7 @@ function autoPull (data) {
       if(update && update.summary.changes) {
         console.log(update)
         console.log('processing and restarting app ...')
+        child.restart()
       }
     })
     .exec(function() {
