@@ -1,12 +1,9 @@
-const firebase = require('firebase');
-const config = require('./config');
+const fb = require('./fb')
 
-firebase.initializeApp(config);
+var ref = fb.child("servers")
 
-var ref = firebase.database().ref().child("servers");
-
-ref.child(config.device).set(new Date().getTime());
+ref.child(process.env.DEVICE).set(new Date().getTime())
 
 ref.once('value', function (snapshot) {
-    process.exit();
-});
+    process.exit()
+})
