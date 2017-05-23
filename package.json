@@ -5,7 +5,7 @@
   "description": "Node.js Hello world app on docker",
   "author": "estebanrfp",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon --watch . index.js && nodemon --watch . auto.js",
     "rebuild": "npm install && node index.js",
     "start-auto": "node auto.js"
   },
