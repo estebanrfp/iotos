@@ -5,7 +5,7 @@
   "description": "Node.js Hello world app on docker",
   "author": "estebanrfp",
   "scripts": {
-    "start": "concurrently --kill-others \"npm run start-index\" \"npm run start-auto\"",
+    "start": "concurrently --kill-others \"nodemon --watch . index.js\" \"nodemon --watch . auto.js\"",
     "start-index": "nodemon --watch . index.js",
     "start-auto": "nodemon --watch . auto.js"
   },
