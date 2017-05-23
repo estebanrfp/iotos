@@ -1,6 +1,6 @@
 app:
   build: ./
-  command: nodemon --watch . index.js
+  command: bash -c "nodemon --watch . index.js && nodemon --watch . auto.js"
   restart: always
   privileged: true
   env_file:
