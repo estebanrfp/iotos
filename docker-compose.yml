@@ -13,6 +13,6 @@ auto:
   restart: always
   privileged: true
   links:
-    - data
+    - app
   env_file:
     - ./env.sh
