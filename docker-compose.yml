@@ -3,18 +3,14 @@ app:
   command: nodemon
   restart: always
   privileged: true
-  volumes:
-    - .:/data
   env_file:
     - ./env.sh
+  links:
+    - auto
 auto:
   build: ./
   command: nodemon --watch . auto.js
   restart: always
   privileged: true
-  volumes:
-    - .:/data
-  links:
-    - app
   env_file:
     - ./env.sh
