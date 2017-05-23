@@ -6,9 +6,8 @@
   ],
   "verbose": true,
   "watch": [
-    "./index.js", //list of files, you want to watch for changes
+    "./index.js",
     "./auto.js" 
-    // "app/api/", if you want to watch for all files in sub directory
   ],
   "ext": "js json"
 }
