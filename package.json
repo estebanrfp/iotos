@@ -5,11 +5,12 @@
   "description": "Node.js Hello world app on docker",
   "author": "estebanrfp",
   "scripts": {
-    "start": "npm run index && npm run auto",
-    "index": "nodemon --watch . index.js",
-    "auto": "nodemon --watch . auto.js"
+    "start": "concurrently --kill-others \"npm run start-index\" \"npm run start-auto\"",
+    "start-index": "nodemon --watch . index.js",
+    "start-auto": "nodemon --watch . auto.js"
   },
   "dependencies": {
+    "concurrently": "^3.4.0",
     "firebase": "^3.7.0",
     "onoff": "^1.1.2",
     "simple-git": "^1.73.0"
