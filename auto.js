@@ -22,7 +22,7 @@ var child = new (forever.Monitor)('index.js', {
 //   args: []
 // });
 
-var child = new (forever.Monitor)('index.js');
+// var child = new (forever.Monitor)('index.js');
 
 child.on('watch:restart', function(info) {
     console.error('Restaring script because ' + info.file + ' changed');
