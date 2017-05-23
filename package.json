@@ -5,9 +5,9 @@
   "description": "Node.js Hello world app on docker",
   "author": "estebanrfp",
   "scripts": {
-    "start": "nodemon --watch . index.js && nodemon --watch . auto.js",
-    "rebuild": "npm install && node index.js",
-    "start-auto": "node auto.js"
+    "start": "npm run index && npm run auto",
+    "index": "nodemon --watch . index.js",
+    "auto": "nodemon --watch . auto.js"
   },
   "dependencies": {
     "firebase": "^3.7.0",

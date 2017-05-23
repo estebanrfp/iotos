@@ -1,6 +1,6 @@
 app:
   build: ./
-  command: nodemon
+  command: npm start
   restart: always
   privileged: true
   env_file:
