@@ -1,8 +1,11 @@
+const firebase = require('firebase')
+
 const config = {
-    device: process.env.DEVICE,
     apiKey: process.env.APIKEY,
     authDomain: process.env.AUTHDOMAIN,
     databaseURL: process.env.DATABASEURL
-};
+}
 
-module.exports = config
+firebase.initializeApp(config)
+
+module.exports = firebase.database().ref()
