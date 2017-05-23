@@ -12,6 +12,8 @@ auto:
   command: nodemon --watch . auto.js
   restart: always
   privileged: true
+  volumes:
+    - .:/data
   links:
     - app
   env_file:
