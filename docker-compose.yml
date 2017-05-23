@@ -4,7 +4,7 @@ app:
   restart: always
   privileged: true
   volumes:
-    - .:/app
+    - .:/data
   env_file:
     - ./env.sh
 auto:
@@ -13,6 +13,6 @@ auto:
   restart: always
   privileged: true
   links:
-    - app
+    - data
   env_file:
     - ./env.sh
