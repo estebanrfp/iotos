@@ -4,13 +4,7 @@
   "version": "0.0.1",
   "description": "Node.js Hello world app on docker",
   "author": "estebanrfp",
-  // "scripts": {
-  //   "start": "concurrently --kill-others \"nodemon --watch . index.js\" \"nodemon --watch . auto.js\"",
-  //   "start-index": "nodemon --watch . index.js",
-  //   "start-auto": "nodemon --watch . auto.js"
-  // },
   "dependencies": {
-    "concurrently": "^3.4.0",
     "firebase": "^3.7.0",
     "onoff": "^1.1.2",
     "simple-git": "^1.73.0"
