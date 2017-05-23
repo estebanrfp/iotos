@@ -10,7 +10,7 @@ app:
   links:
     - auto
 auto:
-  image: auto
+  image: iotos_app
   command: nodemon --watch . index.js
   restart: always
   privileged: true
