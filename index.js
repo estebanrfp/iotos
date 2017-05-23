@@ -1,6 +1,5 @@
 const fb = require('./fb')
-const Gpio = require('onoff').Gpio;
-const auto = require('./auto')
+const Gpio = require('onoff').Gpio
 
 var led = new Gpio(17, 'out')
 
@@ -19,5 +18,3 @@ fb.child("room1").on('value', function (data) {
         led.writeSync(0)
     }
 })
-
-auto()
