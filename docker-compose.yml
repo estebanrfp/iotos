@@ -1,15 +1,6 @@
 app:
   build: ./
-  command: nodemon --watch . auto.js
-  restart: always
-  privileged: true
-  env_file:
-    - ./env.sh
-  links:
-    - auto
-auto:
-  image: iotos_app
-  command: nodemon --watch . index.js
+  command: nodemon
   restart: always
   privileged: true
   env_file:
