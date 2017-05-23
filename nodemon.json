@@ -6,12 +6,7 @@
   ],
   "verbose": true,
   "watch": [
-    "./index.js",
-    "./auto.js" 
-  ],
-  "script": [
-    "./index.js",
-    "./auto.js" 
+    "./index.js"
   ],
   "ext": "js json"
 }
