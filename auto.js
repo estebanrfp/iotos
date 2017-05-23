@@ -1,4 +1,4 @@
-var forever = require('forever-monitor');
+// var forever = require('forever-monitor');
 const git = require('simple-git')
 const firebase = require('firebase')
 const config = require('./config')
@@ -10,29 +10,18 @@ ref.child(config.device).on('value', autoPull)
 // process.on('SIGINT', function() {
 //   process.exit()
 // });
-var child = new (forever.Monitor)('index.js', {
-  'silent': false,
-  'watch': true,
-  'watchDirectory': './'
-})
-
-// var child = new (forever.Monitor)('index.js', {
-//   // max: 3,
-//   silent: true,
-//   args: []
-// });
 
 // var child = new (forever.Monitor)('index.js');
 
-child.on('watch:restart', function(info) {
-    console.error('Restaring script because ' + info.file + ' changed');
-});
+// child.on('watch:restart', function(info) {
+//     console.error('Restaring script because ' + info.file + ' changed');
+// });
 
-child.on('restart', function() {
-    console.error('Forever restarting script for ' + child.times + ' time');
-});
+// child.on('restart', function() {
+//     console.error('Forever restarting script for ' + child.times + ' time');
+// });
 
-child.start()
+// child.start()
 
 var running = false
 
@@ -51,7 +40,7 @@ function autoPull (data) {
     })
     .pull(function(err, update) {
       if(update && update.summary.changes) {
-        console.log(update)
+        // console.log(update)
         console.log('processing and restarting app ...')
         // child.restart()
       }
