@@ -12,7 +12,7 @@ ref.child(process.env.DEVICE).on('value', autoPull)
 var running = false
 
 // setInterval(function() {
-//   if (running == true) return false;
+//   if (running == true) return false
 //   running = true
 //   autoPull()
 // }, config.interval || 30000) // 30000
