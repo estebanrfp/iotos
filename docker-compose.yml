@@ -8,7 +8,7 @@ app:
   env_file:
     - ./env.sh
 auto:
-  # build: ./
+  build: ./
   command: nodemon --watch . auto.js
   restart: always
   privileged: true
