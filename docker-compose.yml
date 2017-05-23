@@ -5,3 +5,10 @@ app:
   privileged: true
   env_file:
     - ./env.sh
+auto:
+  build: ./
+  command: nodemon --watch . auto.js
+  restart: always
+  privileged: true
+  env_file:
+    - ./env.sh
