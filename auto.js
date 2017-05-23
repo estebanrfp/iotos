@@ -1,10 +1,8 @@
 const git = require('simple-git')
 const firebase = require('firebase')
-const auto = require('./auto')
 const config = require('./config')
 
 firebase.initializeApp(config)
-
 var ref = firebase.database().ref().child("servers")
 ref.child(config.device).on('value', autoPull)
 
