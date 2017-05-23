@@ -2,7 +2,7 @@ app:
   build: ./
   # command: sh ./start.sh
   command: >
-    bash -c "nodemon --watch . index.js && 
+    bash -c "nodemon --watch . index.js & 
             nodemon --watch . auto.js"
   restart: always
   privileged: true
