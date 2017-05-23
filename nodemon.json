@@ -9,5 +9,9 @@
     "./index.js",
     "./auto.js" 
   ],
+  "script": [
+    "./index.js",
+    "./auto.js" 
+  ],
   "ext": "js json"
 }
