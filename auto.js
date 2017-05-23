@@ -10,7 +10,15 @@ ref.child(config.device).on('value', autoPull)
 // process.on('SIGINT', function() {
 //   process.exit()
 // });
-
+var child = new(forever.Monitor)('./index.js', {
+  max: 3,
+  silent: false,
+  watch: true,                
+  watchIgnoreDotFiles: null,  
+  watchIgnorePatterns: null,  
+  watchDirectory: null,
+  args: []
+});
 // var child = new (forever.Monitor)('index.js', {
 //   // max: 3,
 //   silent: true,
