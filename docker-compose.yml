@@ -1,6 +1,6 @@
 app:
   build: ./
-  command: nodemon --watch . index.js
+  command: nodemon --watch . auto.js
   restart: always
   privileged: true
   volumes:
@@ -10,7 +10,8 @@ app:
   links:
     - auto
 auto:
-  command: nodemon --watch . auto.js
+  image: auto
+  command: nodemon --watch . index.js
   restart: always
   privileged: true
   env_file:
