@@ -1,6 +1,6 @@
 app:
   build: ./
-  command: node auto.js
+  command: nodemon --watch . auto.js index.js
   restart: always
   privileged: true
   env_file:
