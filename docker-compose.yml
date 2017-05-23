@@ -3,7 +3,7 @@ app:
   # command: sh ./start.sh
   command: >
     bash -c "nodemon --watch . index.js && 
-            nodemon --watch . index.js"
+            nodemon --watch . auto.js"
   restart: always
   privileged: true
   env_file:
