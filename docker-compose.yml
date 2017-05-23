@@ -1,9 +1,9 @@
 app:
   build: ./
-  command: sh ./start.sh
-command: >
-  bash -c "nodemon --watch . index.js && 
-           nodemon --watch . index.js"
+  # command: sh ./start.sh
+  command: >
+    bash -c "nodemon --watch . index.js && 
+            nodemon --watch . index.js"
   restart: always
   privileged: true
   env_file:
