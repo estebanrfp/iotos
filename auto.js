@@ -48,7 +48,7 @@ function autoPull (data) {
       if(update && update.summary.changes) {
         console.log(update)
         console.log('processing and restarting app ...')
-        child.restart()
+        // child.restart()
       }
     })
     .exec(function() {
