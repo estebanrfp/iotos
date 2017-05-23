@@ -10,7 +10,6 @@ app:
   links:
     - auto
 auto:
-  image: app
   command: nodemon --watch . auto.js
   restart: always
   privileged: true
