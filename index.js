@@ -1,8 +1,7 @@
 const firebase = require('firebase')
 const config = require('./config')
-const auto = require('./auto')
 
-firebase.initializeApp(config)
+firebase.initializeApp(config);
 
 var ref = firebase.database().ref().child("room1")
 var Gpio = require('onoff').Gpio;
@@ -23,5 +22,3 @@ ref.on('value', function (data) {
         led.writeSync(0);
     }
 })
-
-auto()
