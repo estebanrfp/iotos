@@ -1,6 +1,6 @@
 app:
   build: ./
-  command: sh ./start.sh
+  command: npm start
   restart: always
   privileged: true
   env_file:
