@@ -1,6 +1,6 @@
 const git = require('simple-git')
-const firebase = require('firebase')
-const config = require('./config')
+// const firebase = require('firebase')
+// const config = require('./config')
 
 function auto () {
   firebase.initializeApp(config)
