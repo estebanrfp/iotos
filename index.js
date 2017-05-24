@@ -1,20 +1,25 @@
 const fb = require('./fb')
 const Gpio = require('onoff').Gpio
 
-var led = new Gpio(17, 'out')
+light("room1", 17)
 
-fb.child("room1").on('value', function (data) {
+function light (room, gpio) {
+
+  let led = new Gpio(gpio, 'out')
+
+  fb.child(room).on('value', function (data) {
     if (data.val().Light == "1") {
-        console.log('led on :-)')
-        led.writeSync(1)
-        // var iv = setInterval(function(){
-        //     led.writeSync(led.readSync() === 0 ? 1 : 0)
-        // }, 800)
-        // var iv = setInterval(function(){
-        //     led.writeSync(led.readSync() === 0 ? 1 : 0)
-        // }, 100)
+      led.writeSync(1)
+      // var iv = setInterval(function(){
+      //     led.writeSync(led.readSync() === 0 ? 1 : 0)
+      // }, 800)
+      // var iv = setInterval(function(){
+      //     led.writeSync(led.readSync() === 0 ? 1 : 0)
+      // }, 100)
+      console.log('led on')
     } else {
-        console.log('led off')
-        led.writeSync(0)
+      led.writeSync(0)
+      console.log('led off')
     }
-})
+  })
+}
