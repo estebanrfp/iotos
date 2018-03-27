@@ -5,7 +5,7 @@ const config = {
     authDomain: process.env.AUTHDOMAIN,
     databaseURL: process.env.DATABASEURL
 }
-console.log(process.env.DATABASEURL)
+
 firebase.initializeApp(config)
 
 module.exports = firebase.database().ref()
