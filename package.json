@@ -5,6 +5,7 @@
   "description": "Node.js Hello world app on docker",
   "author": "estebanrfp",
   "dependencies": {
+    "dotenv": "^5.0.1",
     "firebase": "^3.7.0",
     "onoff": "^1.1.2",
     "simple-git": "^1.73.0"
