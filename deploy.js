@@ -1,4 +1,5 @@
 const fb = require('./fb')
+const dotenv = require('dotenv').config()
 
 var ref = fb.child("servers")
 
