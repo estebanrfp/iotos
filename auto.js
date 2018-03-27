@@ -25,7 +25,7 @@ function autoPull (data) {
     })
     .pull('origin', 'master', function(err, update) {
       if(update && update.summary.changes) {
-        // console.log(update)
+        console.log(update)
         console.log('processing and restarting app ...')
       }
     })
