@@ -11,11 +11,11 @@ ref.child(process.env.DEVICE).on('value', autoPull)
 
 var running = false
 
-setInterval(function() {
-  if (running == true) return false
-  running = true
-  autoPull()
-}, config.interval || 30000) // 30000
+// setInterval(function() {
+//   if (running == true) return false
+//   running = true
+//   autoPull()
+// }, config.interval || 30000) // 30000
 
 function autoPull (data) {
   // console.log(data.val())
@@ -24,12 +24,12 @@ function autoPull (data) {
       console.log('Starting pull ...')
     })
     .pull('origin', 'master', {'--no-rebase': null})
-    // .pull(function(err, update) {
-    //   if(update && update.summary.changes) {
-    //     // console.log(update)
-    //     console.log('processing and restarting app ...')
-    //   }
-    // })
+    .pull('origin', 'master', function(err, update) {
+      if(update && update.summary.changes) {
+        // console.log(update)
+        console.log('processing and restarting app ...')
+      }
+    })
     .exec(function() {
       console.log('pull done.')
       running = false
