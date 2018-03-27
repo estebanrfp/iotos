@@ -23,7 +23,6 @@ function autoPull (data) {
     .exec(function() {
       console.log('Starting pull ...')
     })
-    // .pull('origin', 'master', {'--no-rebase': null})
     .pull('origin', 'master', {'--no-rebase': null}, function(err, update) {
       if(update && update.summary.changes) {
         // console.log(update)
