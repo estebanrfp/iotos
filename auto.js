@@ -24,12 +24,12 @@ function autoPull (data) {
       console.log('Starting pull ...')
     })
     .pull('origin', 'master', {'--no-rebase': null})
-    .pull('origin', 'master', function(err, update) {
-      if(update && update.summary.changes) {
-        // console.log(update)
-        console.log('processing and restarting app ...')
-      }
-    })
+    // .pull('origin', 'master', function(err, update) {
+    //   if(update && update.summary.changes) {
+    //     // console.log(update)
+    //     console.log('processing and restarting app ...')
+    //   }
+    // })
     .exec(function() {
       console.log('pull done.')
       running = false
