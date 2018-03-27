@@ -11,11 +11,11 @@ ref.child(process.env.DEVICE).on('value', autoPull)
 
 var running = false
 
-// setInterval(function() {
-//   if (running == true) return false
-//   running = true
-//   autoPull()
-// }, config.interval || 30000) // 30000
+setInterval(function() {
+  if (running == true) return false
+  running = true
+  autoPull()
+}, config.interval || 30000) // 30000
 
 function autoPull (data) {
   // console.log(data.val())
